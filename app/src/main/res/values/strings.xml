@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Loan Finance Manager</string>
+    
+    <!-- Navigation -->
+    <string name="dashboard">داشبورد</string>
+    <string name="loans">وام‌ها</string>
+    <string name="assets">دارایی‌ها</string>
+    <string name="reports">گزارش‌ها</string>
+    <string name="settings">تنظیمات</string>
+    
+    <!-- Common -->
+    <string name="add">افزودن</string>
+    <string name="edit">ویرایش</string>
+    <string name="delete">حذف</string>
+    <string name="save">ذخیره</string>
+    <string name="cancel">انصراف</string>
+    <string name="close">بستن</string>
+    <string name="ok">تأیید</string>
+    <string name="loading">در حال بارگیری…</string>
+    <string name="error">خطا</string>
+    <string name="success">موفق</string>
+    
+    <!-- Loans -->
+    <string name="loan_name">نام وام</string>
+    <string name="bank_name">نام بانک</string>
+    <string name="total_amount">مبلغ کل وام</string>
+    <string name="monthly_installment">قسط ماهانه</string>
+    <string name="start_date">تاریخ شروع</string>
+    <string name="end_date">تاریخ پایان</string>
+    <string name="description">توضیحات</string>
+    <string name="mark_completed">علامت گذاری به عنوان تمام شده</string>
+    
+    <!-- Installments -->
+    <string name="installment">قسط</string>
+    <string name="due_date">تاریخ سررسید</string>
+    <string name="paid_date">تاریخ پرداخت</string>
+    <string name="amount">مبلغ</string>
+    <string name="mark_as_paid">علامت گذاری به عنوان پرداخت شده</string>
+    <string name="set_reminder">تنظیم یادآوری</string>
+    <string name="reminder">یادآوری</string>
+    
+    <!-- Assets -->
+    <string name="asset_type">نوع دارایی</string>
+    <string name="quantity">مقدار</string>
+    <string name="current_price">قیمت فعلی</string>
+    <string name="total_value">ارزش کل</string>
+    <string name="purchase_price">قیمت خرید</string>
+    <string name="gold">طلا</string>
+    <string name="silver">نقره</string>
+    <string name="dollar">دلار</string>
+    <string name="crypto">ارز دیجیتال</string>
+    
+    <!-- Expenses -->
+    <string name="monthly_expense">هزینه ماهانه</string>
+    <string name="category">دسته‌بندی</string>
+    <string name="gym">باشگاه</string>
+    <string name="tuition">شهریه</string>
+    <string name="subscription">اشتراک</string>
+    
+    <!-- Dashboard -->
+    <string name="total_loans">کل وام‌ها</string>
+    <string name="total_monthly_payment">کل قسط ماهانه</string>
+    <string name="available_money">پول در دسترس</string>
+    <string name="monthly_income">درآمد ماهانه</string>
+    <string name="monthly_expenses">هزینه‌های ماهانه</string>
+    <string name="net_income">درآمد خالص</string>
+    <string name="total_assets">کل دارایی‌ها</string>
+</resources>
