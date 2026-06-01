@@ -22,18 +22,15 @@ interface ExpenseDao {
     @Query("SELECT * FROM expenses WHERE id = :id")
     suspend fun getExpenseById(id: Long): ExpenseEntity?
 
-    @Query("SELECT * FROM expenses ORDER BY createdAt DESC")
+    @Query("SELECT * FROM expenses ORDER BY dueDate DESC")
     fun getAllExpenses(): Flow<List<ExpenseEntity>>
 
-    @Query("SELECT * FROM expenses WHERE isRecurring = 1 ORDER BY title ASC")
-    fun getRecurringExpenses(): Flow<List<ExpenseEntity>>
-
-    @Query("SELECT SUM(amount) FROM expenses WHERE isRecurring = 1")
-    fun getTotalMonthlyExpenses(): Flow<Double?>
-
-    @Query("SELECT * FROM expenses WHERE category = :category ORDER BY createdAt DESC")
+    @Query("SELECT * FROM expenses WHERE category = :category ORDER BY dueDate DESC")
     fun getExpensesByCategory(category: String): Flow<List<ExpenseEntity>>
 
-    @Query("SELECT SUM(amount) FROM expenses WHERE category = :category")
-    fun getTotalByCategory(category: String): Flow<Double?>
+    @Query("SELECT SUM(amount) FROM expenses")
+    fun getTotalExpenses(): Flow<Double?>
+
+    @Query("SELECT SUM(amount) FROM expenses WHERE isRecurring = 1")
+    fun getTotalRecurringExpenses(): Flow<Double?>
 }

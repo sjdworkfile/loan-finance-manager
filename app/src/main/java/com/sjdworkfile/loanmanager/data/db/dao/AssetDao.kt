@@ -22,15 +22,12 @@ interface AssetDao {
     @Query("SELECT * FROM assets WHERE id = :id")
     suspend fun getAssetById(id: Long): AssetEntity?
 
-    @Query("SELECT * FROM assets ORDER BY type ASC")
+    @Query("SELECT * FROM assets ORDER BY lastUpdated DESC")
     fun getAllAssets(): Flow<List<AssetEntity>>
 
-    @Query("SELECT * FROM assets WHERE type = :type")
+    @Query("SELECT * FROM assets WHERE type = :type ORDER BY lastUpdated DESC")
     fun getAssetsByType(type: String): Flow<List<AssetEntity>>
 
     @Query("SELECT SUM(totalValue) FROM assets")
-    fun getTotalAssetValue(): Flow<Double?>
-
-    @Query("SELECT SUM(totalValue) FROM assets WHERE type = :type")
-    fun getTotalValueByType(type: String): Flow<Double?>
+    fun getTotalAssetsValue(): Flow<Double?>
 }

@@ -23,20 +23,14 @@ interface InstallmentDao {
     suspend fun getInstallmentById(id: Long): InstallmentEntity?
 
     @Query("SELECT * FROM installments WHERE loanId = :loanId ORDER BY dueDate ASC")
-    fun getInstallmentsByLoan(loanId: Long): Flow<List<InstallmentEntity>>
+    fun getInstallmentsByLoanId(loanId: Long): Flow<List<InstallmentEntity>>
 
     @Query("SELECT * FROM installments WHERE loanId = :loanId AND isPaid = 0 ORDER BY dueDate ASC")
     fun getPendingInstallments(loanId: Long): Flow<List<InstallmentEntity>>
 
-    @Query("SELECT * FROM installments WHERE isPaid = 0 ORDER BY dueDate ASC")
-    fun getAllPendingInstallments(): Flow<List<InstallmentEntity>>
-
-    @Query("SELECT * FROM installments WHERE reminderEnabled = 1 AND isPaid = 0 ORDER BY dueDate ASC")
-    fun getInstallmentsWithReminder(): Flow<List<InstallmentEntity>>
-
-    @Query("SELECT SUM(amount) FROM installments WHERE loanId = :loanId AND isPaid = 1")
-    fun getTotalPaidByLoan(loanId: Long): Flow<Double?>
+    @Query("SELECT COUNT(*) FROM installments WHERE loanId = :loanId AND isPaid = 0")
+    fun getPendingInstallmentCount(loanId: Long): Flow<Int>
 
     @Query("SELECT SUM(amount) FROM installments WHERE loanId = :loanId AND isPaid = 0")
-    fun getTotalPendingByLoan(loanId: Long): Flow<Double?>
+    fun getTotalPendingAmount(loanId: Long): Flow<Double?>
 }
